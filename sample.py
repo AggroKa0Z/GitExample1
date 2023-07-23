@@ -1,10 +1,7 @@
 import yaml
 from yaml import load, load_all
-from Formatter import Formatter
 
-pretty = Formatter()
-
-stream = open('sample.yaml','r')
+stream = open('sample4.yaml','r')
 
 data = load_all(stream, Loader=yaml.FullLoader)
 
@@ -12,11 +9,8 @@ data = load_all(stream, Loader=yaml.FullLoader)
 
 for doc in data:    
     print("New Document:")
-    if type(doc) is list:
-        print(pretty(doc))
-        #print(doc)
-    else:
-        print(pretty(doc))
-        #for key, value in doc.items():
-        #    print(key + ": " + str(value))
+    for key, value in doc.items():
+        print(key + ": " + str(value))
+        if type(value) is list:
+            print(str(len(value)))
 
