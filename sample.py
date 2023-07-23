@@ -5,7 +5,6 @@ stream = open('sample4.yaml','r')
 
 data = load_all(stream, Loader=yaml.FullLoader)
 
-#print(pretty(data))
 
 for doc in data:    
     print("New Document:")
